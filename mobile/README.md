@@ -1,35 +1,35 @@
-# 📱 ArogyaLink Mobile App
+# ArogyaLink Mobile App
 
 > Patient health tracking application built with React Native and Expo
 
-## 🌟 Overview
+## Overview
 
 The ArogyaLink mobile app is a beautiful, multilingual health tracking application designed for patients to monitor their health data, receive notifications from doctors, and manage their health records on the go.
 
-## ✨ Key Features
+## Key Features
 
-### 🎯 Core Functionality
+### Core Functionality
 - **Multi-language Support** - English, Hindi (हिंदी), Marathi (मराठी) with instant switching
 - **Health Records** - View health data with interactive line charts
 - **Push Notifications** - Receive real-time updates from healthcare providers
 - **Offline-first** - Works without internet using AsyncStorage
 - **Patient Profile** - Manage personal information and settings
 
-### 🎨 UI/UX Features
+### UI/UX Features
 - Modern gradient-based dark theme
 - 4-tab navigation (Home, Alerts, Profile, Language)
 - Quick action cards for common tasks
 - Smooth animations and transitions
 - Responsive design for all screen sizes
 
-### 📊 Health Tracking
+### Health Tracking
 - Blood Pressure monitoring
 - Sugar Level tracking
 - Heart Rate visualization
 - Weight management
 - Historical data with charts
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Technologies
 - **React Native** - 0.76.5
@@ -52,7 +52,7 @@ The ArogyaLink mobile app is a beautiful, multilingual health tracking applicati
 }
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18 or higher
@@ -107,7 +107,7 @@ npm run tsc
 npm run lint
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 my-app/
@@ -133,7 +133,7 @@ my-app/
 └── assets/              # Images, fonts, etc.
 ```
 
-## 🎨 Screens
+## Screens
 
 ### 1. Landing Page
 - Welcome screen with ArogyaLink branding
@@ -147,9 +147,9 @@ my-app/
 
 ### 3. Dashboard (Home Tab)
 - Quick action cards:
-  - 📊 Health Records
-  - 🌐 Language Settings
-  - 🏥 Find Hospital
+  - Health Records
+  - Language Settings
+  - Find Hospital
 - Recent notifications preview
 - Pull-to-refresh
 
@@ -178,13 +178,13 @@ my-app/
 - History list
 - Empty state handling
 
-### 8. Nearby Hospitals 🏥 NEW!
+### 8. Nearby Hospitals NEW!
 - **Interactive Map** - Real-time map with hospital markers
 - **Device Location** - Uses GPS to find your current location
 - **Search Radius** - Adjustable radius (2km, 5km, 10km)
 - **Multiple Facility Types**:
-  - 🏥 Hospitals
-  - 🏥 Clinics
+  - Hospitals
+  - Clinics  
   - 💊 Pharmacies
   - 👨‍⚕️ Doctors
 - **Detailed Information**:
@@ -195,7 +195,7 @@ my-app/
 - **Turn-by-Turn Directions** - One-tap navigation using Google Maps
 - **Powered by OpenStreetMap** - Using Overpass API for real-time data
 
-## 🌐 Multi-language Implementation
+## Multi-language Implementation
 
 ### Supported Languages
 1. **English** - Default
@@ -218,7 +218,7 @@ const { t } = useTranslation();
 2. Add translations to `hi.json` and `mr.json`
 3. Use `t('key')` in component
 
-## 🔔 Push Notifications
+## Push Notifications
 
 ### Setup
 ```typescript
@@ -239,7 +239,7 @@ const token = await registerForPushNotificationsAsync();
 }
 ```
 
-## 📊 Charts Implementation
+## Charts Implementation
 
 ### Health Records Chart
 ```typescript
@@ -256,7 +256,7 @@ import { LineChart } from 'react-native-chart-kit';
 />
 ```
 
-## 🎨 Design System
+## Design System
 
 ### Colors
 ```typescript
@@ -277,7 +277,7 @@ import { LineChart } from 'react-native-chart-kit';
 - **Body:** 14px, Regular
 - **Caption:** 12px, Regular
 
-## 🔐 Authentication Flow
+## Authentication Flow
 
 ```
 User Opens App
@@ -295,7 +295,7 @@ Store credentials in AsyncStorage
 Navigate to Dashboard
 ```
 
-## 📱 API Integration
+## API Integration
 
 ### Base Configuration
 ```typescript
@@ -322,7 +322,7 @@ const response = await fetch(
 );
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing Checklist
 - [ ] Login/Logout flow
@@ -458,8 +458,8 @@ import MapView, { Marker, Circle } from 'react-native-maps';
 ```
 
 ### Marker Color Coding
-- 🏥 **Red** - Hospitals
-- 🏥 **Teal** - Clinics  
+- **Red** - Hospitals
+- **Teal** - Clinics  
 - 💊 **Purple** - Pharmacies
 - 👨‍⚕️ **Gold** - Doctors
 
@@ -488,7 +488,7 @@ import MapView, { Marker, Circle } from 'react-native-maps';
 }
 ```
 
-## 📈 Performance Tips
+## Performance Tips
 
 1. **Use React.memo** for expensive components
 2. **Lazy load** images and heavy components
@@ -496,7 +496,7 @@ import MapView, { Marker, Circle } from 'react-native-maps';
 4. **Cache translations** in memory
 5. **Use FlatList** for long lists
 
-## 🚀 Deployment
+## Deployment
 
 ### Building for Production
 
