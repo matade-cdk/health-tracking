@@ -1,4 +1,4 @@
-# 🏥 ArogyaLink - Smart Health Tracking System
+# ArogyaLink - Smart Health Tracking System
 
 [![React Native](https://img.shields.io/badge/React_Native-0.76.5-blue.svg)](https://reactnative.dev/)
 [![Expo](https://img.shields.io/badge/Expo-54.0.13-000020.svg)](https://expo.dev/)
@@ -7,7 +7,7 @@
 
 > **Your Health, Connected** - A comprehensive health tracking platform designed for seamless doctor-patient communication with real-time monitoring and multi-language support.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -18,7 +18,7 @@
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 
-## 🌟 Overview
+## Overview
 
 ArogyaLink is a modern health tracking system that bridges the gap between patients and healthcare providers. The platform consists of:
 
@@ -35,25 +35,25 @@ ArogyaLink is a modern health tracking system that bridges the gap between patie
 - ✅ **Secure Authentication** - Phone number-based authentication
 - ✅ **Responsive Design** - Works on all devices
 
-## ✨ Features
+## Features
 
 ### Mobile App (Patient)
-- 📱 Beautiful gradient-based UI with dark theme
-- 🌐 Multi-language interface (English/Hindi/Marathi)
-- 📊 Health records visualization with line charts
-- 🔔 Push notifications for doctor updates
-- 👤 Patient profile management
-- 💾 Offline-first architecture with AsyncStorage
-- 🎯 Quick actions dashboard
+- Beautiful gradient-based UI with dark theme
+- Multi-language interface (English/Hindi/Marathi)
+- Health records visualization with line charts
+- Push notifications for doctor updates
+- Patient profile management
+- Offline-first architecture with AsyncStorage
+- Quick actions dashboard
 
 ### Web Dashboard (Doctor)
-- 🏥 Patient management system
-- 📈 Health trends visualization with recharts
-- 📝 Add/update patient health data
-- 👥 Patient list with search and filters
-- 📱 Send notifications to patients
-- 📊 Multi-line health charts (BP, Sugar, HR, Weight)
-- 🔐 Secure doctor authentication
+- Patient management system
+- Health trends visualization with recharts
+- Add/update patient health data
+- Patient list with search and filters
+- Send notifications to patients
+- Multi-line health charts (BP, Sugar, HR, Weight)
+- Secure doctor authentication
 
 ## 🏗️ Architecture
 
@@ -78,7 +78,7 @@ ArogyaLink is a modern health tracking system that bridges the gap between patie
 └─────────────────┘
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Mobile App
 - **Framework:** React Native with Expo SDK 54
@@ -103,7 +103,7 @@ ArogyaLink is a modern health tracking system that bridges the gap between patie
 - **Authentication:** JWT (planned)
 - **CORS:** Enabled for web/mobile access
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -159,7 +159,7 @@ PORT=4000
 REACT_APP_API_URL=http://localhost:4000
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 smart-health-tracking-thing/
@@ -188,7 +188,7 @@ smart-health-tracking-thing/
 - [Web README](./web/README.md) - Web frontend and backend documentation
 - [API Documentation](#) - Coming soon
 
-## 🎨 Features by Module
+## Features by Module
 
 ### Authentication
 - Phone number-based login/registration
@@ -214,7 +214,7 @@ smart-health-tracking-thing/
 - Complete UI translation
 - Supports: English, Hindi, Marathi
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Backend tests
@@ -255,7 +255,7 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Team
+## Team
 
 - **Developer:** Satvik Student
 - **Project:** Smart Health Tracking System

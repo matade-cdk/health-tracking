@@ -1,14 +1,14 @@
-# 🏥 ArogyaLink Web Platform
+# ArogyaLink Web Platform
 
 > Doctor dashboard and backend API for the ArogyaLink health tracking system
 
-## 🌟 Overview
+## Overview
 
 The web platform consists of two main components:
 1. **Frontend** - React-based doctor dashboard for patient management
 2. **Backend** - Node.js/Express API server with MongoDB
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -18,29 +18,29 @@ The web platform consists of two main components:
 - [Frontend Guide](#frontend-guide)
 - [Backend Guide](#backend-guide)
 
-## ✨ Features
+## Features
 
 ### Frontend (Doctor Dashboard)
-- 🎨 Modern gradient-based UI with dark theme
-- 👥 Patient management system
-- 📊 Health trends visualization with recharts
-- 📝 Add/update patient health data
-- 🔔 Send notifications to patients
-- 🔐 Secure doctor authentication
-- 📈 Multi-line health charts (Blood Pressure, Sugar, Heart Rate, Weight)
-- 🔍 Patient search and filtering
+- Modern gradient-based UI with dark theme
+- Patient management system
+- Health trends visualization with recharts
+- Add/update patient health data
+- Send notifications to patients
+- Secure doctor authentication
+- Multi-line health charts (Blood Pressure, Sugar, Heart Rate, Weight)
+- Patient search and filtering
 
 ### Backend API
-- 🚀 RESTful API with Express.js
-- 💾 MongoDB database with Mongoose ODM
-- 👨‍⚕️ Doctor authentication and management
-- 👤 Patient data management
-- 📊 Health records CRUD operations
-- 🔔 Push notification system
-- 🔒 CORS enabled for web/mobile access
-- ⚡ Fast and scalable architecture
+- RESTful API with Express.js
+- MongoDB database with Mongoose ODM
+- Doctor authentication and management
+- Patient data management
+- Health records CRUD operations
+- Push notification system
+- CORS enabled for web/mobile access
+- Fast and scalable architecture
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 ```json
@@ -62,7 +62,7 @@ The web platform consists of two main components:
 }
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18 or higher
@@ -128,7 +128,7 @@ npm start
 
 Application will open on `http://localhost:3000`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 web/
@@ -162,7 +162,7 @@ web/
     └── package.json
 ```
 
-## 🔌 API Documentation
+## API Documentation
 
 ### Base URL
 ```
@@ -344,12 +344,12 @@ PUT /patients/:patientId/notifications/:notificationId/read
 Response: 200 OK
 ```
 
-## 🎨 Frontend Guide
+## Frontend Guide
 
 ### Pages
 
 #### 1. Landing Page (`/`)
-- ArogyaLink branding with 🏥 logo
+- ArogyaLink branding with logo
 - "Your Health, Connected" tagline
 - Sign In and Create Account buttons
 - Gradient background design
@@ -488,7 +488,7 @@ HTTP Status Codes:
 - `404` - Not Found
 - `500` - Server Error
 
-## 🧪 Testing
+## Testing
 
 ### Backend Testing
 ```bash
@@ -511,7 +511,7 @@ npm test
 npm run build
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment
 
@@ -546,7 +546,7 @@ npm i -g vercel
 vercel
 ```
 
-## 🔐 Security Best Practices
+## Security Best Practices
 
 1. **Password Hashing** - Implement bcrypt for password encryption
 2. **JWT Tokens** - Add JWT for session management
@@ -555,7 +555,7 @@ vercel
 5. **Environment Variables** - Never commit .env files
 6. **Rate Limiting** - Implement API rate limiting
 
-## 📈 Performance Optimization
+## Performance Optimization
 
 1. **Database Indexing**
 ```javascript
@@ -606,7 +606,7 @@ Part of the ArogyaLink platform.
 
 ---
 
-**Built with ⚡ Node.js, Express, React, and MongoDB**
+**Built with Node.js, Express, React, and MongoDB**
 - Secure password hashing with bcryptjs
 - CORS enabled for cross-origin requests
 
@@ -617,7 +617,7 @@ Part of the ArogyaLink platform.
 - Smooth scroll effects and transitions
 - God-level UI with gradient effects
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -687,7 +687,7 @@ The app will open at `http://localhost:3000`
 - **PUT** `/api/doctors/:id` - Update doctor info
 - **DELETE** `/api/doctors/:id` - Soft delete doctor
 
-## 🎨 Frontend Features
+## Frontend Features
 
 - **Landing Page**: Eye-catching hero section with animated gradients
 - **Responsive Design**: Works perfectly on mobile, tablet, and desktop
@@ -729,7 +729,7 @@ npm run build
 
 Deploy the `build` folder to your hosting service (Vercel, Netlify, etc.)
 
-## 🛠️ Development
+## Development
 
 ### Backend
 - Uses nodemon for auto-reload during development
@@ -741,7 +741,7 @@ Deploy the `build` folder to your hosting service (Vercel, Netlify, etc.)
 - Component-based architecture
 - CSS modules for scoped styling
 
-## 📝 Environment Variables
+## Environment Variables
 
 ### Backend (.env)
 ```env
@@ -761,7 +761,7 @@ PORT=3000
 
 This project is licensed under the MIT License.
 
-## 👥 Team
+## Team
 
 Built with ❤️ by the SmartHealth team
 
