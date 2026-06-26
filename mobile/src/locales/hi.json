@@ -1,0 +1,85 @@
+{
+  "app": {
+    "name": "स्वास्थ्य ट्रैकर",
+    "tagline": "अपने स्वास्थ्य को ट्रैक करें, कभी भी, कहीं भी"
+  },
+  "auth": {
+    "login": "लॉगिन",
+    "register": "रजिस्टर करें",
+    "phone": "फ़ोन नंबर",
+    "password": "पासवर्ड",
+    "name": "पूरा नाम",
+    "age": "उम्र",
+    "gender": "लिंग",
+    "male": "पुरुष",
+    "female": "महिला",
+    "other": "अन्य",
+    "village": "गांव/क्षेत्र",
+    "bloodGroup": "रक्त समूह",
+    "emergencyContact": "आपातकालीन संपर्क",
+    "logout": "लॉगआउट"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "welcome": "स्वागत है",
+    "latestReadings": "नवीनतम रीडिंग",
+    "viewAll": "सभी देखें",
+    "addReading": "रीडिंग जोड़ें",
+    "noData": "कोई स्वास्थ्य डेटा उपलब्ध नहीं"
+  },
+  "health": {
+    "readings": "स्वास्थ्य रीडिंग",
+    "charts": "स्वास्थ्य चार्ट",
+    "addReading": "रीडिंग जोड़ें",
+    "bloodPressure": "रक्तचाप",
+    "bloodSugar": "रक्त शर्करा",
+    "heartRate": "हृदय गति",
+    "weight": "वजन",
+    "temperature": "तापमान",
+    "oxygen": "ऑक्सीजन स्तर",
+    "normal": "सामान्य",
+    "high": "उच्च",
+    "low": "निम्न",
+    "date": "तारीख",
+    "value": "मान",
+    "notes": "नोट्स"
+  },
+  "reminders": {
+    "title": "रिमाइंडर",
+    "add": "रिमाइंडर जोड़ें",
+    "edit": "रिमाइंडर संपादित करें",
+    "delete": "रिमाइंडर हटाएं",
+    "time": "समय",
+    "repeat": "दोहराएं",
+    "daily": "दैनिक",
+    "weekly": "साप्ताहिक",
+    "medicine": "दवा",
+    "checkup": "जांच",
+    "exercise": "व्यायाम",
+    "diet": "आहार",
+    "noReminders": "कोई रिमाइंडर सेट नहीं"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "profile": "प्रोफ़ाइल",
+    "language": "भाषा",
+    "notifications": "सूचनाएं",
+    "sync": "डेटा सिंक करें",
+    "lastSync": "अंतिम बार सिंक किया गया",
+    "syncNow": "अभी सिंक करें",
+    "about": "के बारे में"
+  },
+  "common": {
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "confirm": "पुष्टि करें",
+    "close": "बंद करें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "offline": "ऑफ़लाइन",
+    "online": "ऑनलाइन"
+  }
+}

@@ -97,13 +97,13 @@ patientSchema.pre('validate', async function(next) {
     }
 
     try {
-        // Initialize counter at 1 on first insert, then increment by 1 atomically,
-        // so first generated value is 2 (P002), then P003, etc.
+        // Find and update the counter atomically
         const counter = await Counter.findByIdAndUpdate(
             'patientId',
-            { $inc: { seq: 1 }, $setOnInsert: { seq: 1 } },
-            { new: true, upsert: true }
+            { $inc: { seq: 1 } },
+            { new: true, upsert: true, setDefaultsOnInsert: true }
         );
+        
         const seqNumber = counter.seq;
         patient.patientId = `P${String(seqNumber).padStart(3, '0')}`;
         next();

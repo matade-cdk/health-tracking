@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Health Tracker",
+    "slug": "health-tracker-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.healthtracker.app"
+    },
+    "android": {
+      "package": "com.healthtracker.app",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      "expo-notifications"
+    ]
+  }
+}

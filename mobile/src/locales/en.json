@@ -1,0 +1,85 @@
+{
+  "app": {
+    "name": "Health Tracker",
+    "tagline": "Track your health, anytime, anywhere"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "phone": "Phone Number",
+    "password": "Password",
+    "name": "Full Name",
+    "age": "Age",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "village": "Village/Area",
+    "bloodGroup": "Blood Group",
+    "emergencyContact": "Emergency Contact",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome",
+    "latestReadings": "Latest Readings",
+    "viewAll": "View All",
+    "addReading": "Add Reading",
+    "noData": "No health data available"
+  },
+  "health": {
+    "readings": "Health Readings",
+    "charts": "Health Charts",
+    "addReading": "Add Reading",
+    "bloodPressure": "Blood Pressure",
+    "bloodSugar": "Blood Sugar",
+    "heartRate": "Heart Rate",
+    "weight": "Weight",
+    "temperature": "Temperature",
+    "oxygen": "Oxygen Level",
+    "normal": "Normal",
+    "high": "High",
+    "low": "Low",
+    "date": "Date",
+    "value": "Value",
+    "notes": "Notes"
+  },
+  "reminders": {
+    "title": "Reminders",
+    "add": "Add Reminder",
+    "edit": "Edit Reminder",
+    "delete": "Delete Reminder",
+    "time": "Time",
+    "repeat": "Repeat",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "medicine": "Medicine",
+    "checkup": "Checkup",
+    "exercise": "Exercise",
+    "diet": "Diet",
+    "noReminders": "No reminders set"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "language": "Language",
+    "notifications": "Notifications",
+    "sync": "Sync Data",
+    "lastSync": "Last synced",
+    "syncNow": "Sync Now",
+    "about": "About"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "offline": "Offline",
+    "online": "Online"
+  }
+}

@@ -6,20 +6,47 @@ const path = require('path');
 const axios = require('axios');
 require('dotenv').config();
 
-const { Doctor, Patient, PatientData, Notification } = require('./models');
+const { Doctor, Patient, PatientData, Notification, Counter } = require('./models');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connect to MongoDB
-const connectDB = async () => {
+// Connect to MongoDB with retry logic
+const connectDB = async (retries = 5) => {
     try {
-        await mongoose.connect(process.env.MONGODB_URI);
+        console.log('Attempting to connect to MongoDB...');
+        console.log('MongoDB URI:', process.env.MONGODB_URI?.replace(/\/\/([^:]+):([^@]+)@/, '//***:***@'));
+        
+        await mongoose.connect(process.env.MONGODB_URI, {
+            serverSelectionTimeoutMS: 10000, // 10 seconds timeout
+            socketTimeoutMS: 45000, // 45 seconds socket timeout
+        });
         console.log('MongoDB connected successfully');
+        
+        // Initialize counter if it doesn't exist
+        await Counter.findOneAndUpdate(
+            { _id: 'patientId' },
+            { $setOnInsert: { seq: 1 } },
+            { upsert: true, new: true }
+        );
+        console.log('Counter initialized');
     } catch (error) {
-        console.error('MongoDB connection error:', error);
-        process.exit(1);
+        console.error('MongoDB connection error:', error.message);
+        
+        if (retries > 0) {
+            console.log(`Retrying connection... (${retries} attempts left)`);
+            setTimeout(() => connectDB(retries - 1), 5000); // Wait 5 seconds before retry
+        } else {
+            console.error('Failed to connect to MongoDB after multiple attempts');
+            console.error('Please check:');
+            console.error('1. MongoDB Atlas cluster is running and accessible');
+            console.error('2. Your IP address is whitelisted in MongoDB Atlas');
+            console.error('3. The connection string is correct');
+            console.error('4. Your internet connection is stable');
+            console.error('5. Consider using local MongoDB: mongodb://localhost:27017/healthtracker');
+            process.exit(1);
+        }
     }
 };
 

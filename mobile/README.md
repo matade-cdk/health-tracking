@@ -46,7 +46,9 @@ The ArogyaLink mobile app is a beautiful, multilingual health tracking applicati
   "i18next": "^23.17.5",
   "react-i18next": "^15.2.0",
   "@react-native-async-storage/async-storage": "^2.1.0",
-  "expo-notifications": "^0.29.12"
+  "expo-notifications": "^0.29.12",
+  "react-native-maps": "^1.18.0",
+  "expo-location": "^18.0.4"
 }
 ```
 
@@ -114,6 +116,7 @@ my-app/
 │   ├── login.tsx          # Login screen
 │   ├── register.tsx       # Registration screen
 │   ├── records.tsx        # Health records screen
+│   ├── hospitals.tsx      # Hospital finder with maps
 │   └── _layout.tsx        # Root layout
 ├── components/            # Reusable components
 │   └── LanguageSelector.tsx
@@ -174,6 +177,23 @@ my-app/
 - Latest record card
 - History list
 - Empty state handling
+
+### 8. Nearby Hospitals 🏥 NEW!
+- **Interactive Map** - Real-time map with hospital markers
+- **Device Location** - Uses GPS to find your current location
+- **Search Radius** - Adjustable radius (2km, 5km, 10km)
+- **Multiple Facility Types**:
+  - 🏥 Hospitals
+  - 🏥 Clinics
+  - 💊 Pharmacies
+  - 👨‍⚕️ Doctors
+- **Detailed Information**:
+  - Distance from your location
+  - Facility name and type
+  - Address (when available)
+  - Visual markers on map
+- **Turn-by-Turn Directions** - One-tap navigation using Google Maps
+- **Powered by OpenStreetMap** - Using Overpass API for real-time data
 
 ## 🌐 Multi-language Implementation
 
@@ -341,6 +361,131 @@ npm install react-native-svg
 # Check AsyncStorage
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const lang = await AsyncStorage.getItem('user_language');
+```
+
+**5. Maps not showing**
+```bash
+# Install maps dependencies
+npm install react-native-maps expo-location
+
+# Check location permissions in app.json
+{
+  "ios": {
+    "infoPlist": {
+      "NSLocationWhenInUseUsageDescription": "..."
+    }
+  },
+  "android": {
+    "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+  }
+}
+```
+
+## 🗺️ Maps & Geolocation
+
+### Hospital Finder Implementation
+
+The hospital finder uses **OpenStreetMap** data via the **Overpass API** to fetch nearby medical facilities.
+
+#### How It Works
+
+1. **Get User Location**
+```typescript
+import * as Location from 'expo-location';
+
+const { status } = await Location.requestForegroundPermissionsAsync();
+const location = await Location.getCurrentPositionAsync({
+  accuracy: Location.Accuracy.Balanced
+});
+```
+
+2. **Fetch Hospitals from Overpass API**
+```typescript
+const query = `
+  [out:json];
+  (
+    node["amenity"="hospital"](around:${radius},${lat},${lon});
+    node["amenity"="clinic"](around:${radius},${lat},${lon});
+    node["amenity"="pharmacy"](around:${radius},${lat},${lon});
+    node["amenity"="doctors"](around:${radius},${lat},${lon});
+  );
+  out body;
+`;
+
+const response = await fetch('https://overpass-api.de/api/interpreter', {
+  method: 'POST',
+  body: query
+});
+```
+
+3. **Calculate Distance (Haversine Formula)**
+```typescript
+const calculateDistance = (lat1, lon1, lat2, lon2) => {
+  const R = 6371; // Earth's radius in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+};
+```
+
+4. **Display on Map**
+```typescript
+import MapView, { Marker, Circle } from 'react-native-maps';
+
+<MapView
+  initialRegion={{
+    latitude: userLat,
+    longitude: userLon,
+    latitudeDelta: 0.05,
+    longitudeDelta: 0.05
+  }}
+>
+  <Marker coordinate={{ latitude: userLat, longitude: userLon }} />
+  {hospitals.map(hospital => (
+    <Marker
+      key={hospital.id}
+      coordinate={{ latitude: hospital.lat, longitude: hospital.lon }}
+      pinColor={getMarkerColor(hospital.type)}
+    />
+  ))}
+</MapView>
+```
+
+### Marker Color Coding
+- 🏥 **Red** - Hospitals
+- 🏥 **Teal** - Clinics  
+- 💊 **Purple** - Pharmacies
+- 👨‍⚕️ **Gold** - Doctors
+
+### Required Permissions
+
+**iOS (app.json)**
+```json
+{
+  "ios": {
+    "infoPlist": {
+      "NSLocationWhenInUseUsageDescription": "We need your location to show nearby hospitals and clinics."
+    }
+  }
+}
+```
+
+**Android (app.json)**
+```json
+{
+  "android": {
+    "permissions": [
+      "ACCESS_FINE_LOCATION",
+      "ACCESS_COARSE_LOCATION"
+    ]
+  }
+}
 ```
 
 ## 📈 Performance Tips
